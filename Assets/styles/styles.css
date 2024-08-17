@@ -13,7 +13,7 @@
   /*Margins & Paddings*/
 
   /* Borders */
-
+  --default-border: 1px solid #000;
 }
 
 /* *Andy Bell's basic reset* */
@@ -130,7 +130,6 @@ textarea:not([rows]) {
 
 /* *Styles* */
 .container {
-  height: 100%;
   display: flex;
   padding: 1em;
   gap: 1em;
@@ -140,20 +139,22 @@ textarea:not([rows]) {
   padding-bottom: 1em;
   text-align: center;
   font-weight: bold;
-  border-bottom: 1px solid black;
+  border-bottom: var(--default-border);
 }
 
 #users-container {
   width: 30%;
-  padding: 1em;
-  border: 1px solid #000;
+  min-width: fit-content;
+  padding: 1em 0.5em;
+  border: var(--default-border);
   border-radius: 0.25em;
 }
 
 #posts-container {
   width: 70%;
+  min-width: fit-content;
   padding: 1em;
-  border: 1px solid #000;
+  border: var(--default-border);
   border-radius: 0.25em;
 }
 
@@ -161,8 +162,10 @@ textarea:not([rows]) {
 .user-card {
   margin: 0.5em;
   padding: 0.5em;
-  border: 1px solid black;
+  display: block;
+  border: var(--default-border);
   border-radius: 0.25em;
+  cursor: pointer;
 }
 /* *General queries* */
 

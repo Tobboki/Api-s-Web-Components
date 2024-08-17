@@ -3,14 +3,13 @@ template.innerHTML = `
   <style>
     .user-name {
       margin: 0;
-      padding: 0.5em 0em;
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
   </style>
      <h1 class="user-name">
     <slot></slot>
     </h1>
-    <slot name="email"></slot>
+    <slot name="email" class="user-email"></slot>
   `;
 
 class userCard extends HTMLElement {
