@@ -21,6 +21,10 @@ async function renderUsers() {
       renderUserPosts(userId);
     });
   });
+
+  document.querySelector('.all-posts-button').addEventListener('click', () => {
+    renderAllPosts();
+  });
 }
 
 async function renderUserPosts(userId) {
@@ -37,8 +41,9 @@ async function renderUserPosts(userId) {
   };
 }
 
-async function renderPosts() {
+async function renderAllPosts() {
   const posts = await getPosts();
+  postsSection.innerHTML = '';
   for (let post of posts){
     let postCard = `
       <post-card class="post-card">
@@ -51,4 +56,4 @@ async function renderPosts() {
 }
  
 renderUsers();
-renderPosts();
+renderAllPosts();
