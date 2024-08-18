@@ -5,7 +5,7 @@ export async function getUsers() {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.log(error);
+    console.log("Error:", error);
   }
 }
 
@@ -16,6 +16,17 @@ export async function getPosts() {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.log(error);
+    console.log("Error:", error);
+  }
+}
+
+export async function getPostsViaUserId(userId) {
+  try {
+    const url = `https://jsonplaceholder.typicode.com/posts?userId=${userId}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log("Error:", error);
   }
 }
