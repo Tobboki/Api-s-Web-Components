@@ -15,5 +15,19 @@ async function renderUsers() {
     usersSection.insertAdjacentHTML('beforeend', userCard);
   };
 }
+
+async function renderPosts() {
+  const posts = await getPosts();
+  for (let post of posts){
+    let postCard = `
+      <post-card class="post-card">
+        ${post.title}
+        <p slot="body">${post.body}</p>
+      </post-card>
+    `;
+    postsSection.insertAdjacentHTML('beforeend', postCard);
+  };
+}
  
 renderUsers();
+renderPosts();

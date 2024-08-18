@@ -1,18 +1,26 @@
 const template = document.createElement("template");
 template.innerHTML = `
   <style>
-    .user-name {
+    .post-title {
       margin: 0;
       font-size: 1rem;
+      font-weight: bolder;
+    }
+    .post-body {
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
     }
   </style>
-    <h1 class="user-name">
+    <h1 class="post-title">
       <slot></slot>
     </h1>
-    <slot name="email" class="user-email"></slot>
+    <slot name="body" class="post-body"></slot>
   `;
 
-class userCard extends HTMLElement {
+class postCard extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({mode: 'open'});
@@ -22,4 +30,4 @@ class userCard extends HTMLElement {
   }
 }
 
-customElements.define("user-card", userCard);
+customElements.define("post-card", postCard);

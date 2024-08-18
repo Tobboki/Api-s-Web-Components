@@ -114,6 +114,9 @@ textarea:not([rows]) {
 }
 
 /* *Compound consistent styles* */
+body {
+  background-color: aliceblue;
+}
 
 /* *Utility classes* */
 .visually-hidden {
@@ -136,6 +139,7 @@ textarea:not([rows]) {
 }
 
 .container-title {
+  margin: 0 auto;
   padding-bottom: 1em;
   text-align: center;
   font-weight: bold;
@@ -143,16 +147,14 @@ textarea:not([rows]) {
 }
 
 #users-container {
-  width: 30%;
-  min-width: fit-content;
+  max-width: 30%;
   padding: 1em 0.5em;
   border: var(--default-border);
   border-radius: 0.25em;
 }
 
 #posts-container {
-  width: 70%;
-  min-width: fit-content;
+  min-width: 70%;
   padding: 1em;
   border: var(--default-border);
   border-radius: 0.25em;
@@ -162,10 +164,20 @@ textarea:not([rows]) {
 .user-card {
   margin: 0.5em;
   padding: 0.5em;
+  min-width: fit-content;
   display: block;
   border: var(--default-border);
   border-radius: 0.25em;
   cursor: pointer;
 }
-/* *General queries* */
 
+.post-card {
+  margin: 0.5em auto;
+  padding: 0.5em;
+  min-width: fit-content;
+  display: block;
+  border: var(--default-border);
+  border-radius: 0.25em;
+}
+
+/* *General queries* */
